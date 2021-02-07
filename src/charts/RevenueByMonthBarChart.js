@@ -38,11 +38,11 @@ class RevenueBYMonthBarChart extends React.Component {
                     y={"revenue"}
                 />
                 <VictoryAxis
-                    label="12 Months Rolling"
+                    label="Last 12 Months"
                     style={this.whiteStyle}
                 />
                 <VictoryAxis dependentAxis
-                    label="Total Revenue in Thousands"
+                    label="Total Revenue (Thousands)"
                     style={this.whiteStyle}
                 />
             </VictoryChart>

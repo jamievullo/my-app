@@ -32,9 +32,9 @@ const polarInterpolations = [
 ];
 
 const InterpolationSelect = ({ currentValue, values, onChange }) => (
-    <select onChange={onChange} value={currentValue} style={{ width: 75 }}>
+    <select onChange={ onChange } value={ currentValue } style={{ width: 75 }}>
         {values.map(
-            (value) => <option value={value} key={value}>{value}</option>
+            (value) => <option value={ value } key={ value }>{ value }</option>
         )}
     </select>
 );
@@ -46,34 +46,41 @@ class InterpolationChart extends React.Component {
         polar: false
     };
 
+    whiteStyle = {
+        axis: { stroke: "white" },
+        axisLabel: { fontSize: 15, padding: 30, fill: "white" },
+        ticks: { stroke: "#bb86fc", size: 5, },
+        tickLabels: { fontSize: 13, padding: 5, fill: "white" }
+    }
+
     render() {
         return (
             <div>
                 <InterpolationSelect
                     currentValue={this.state.interpolation}
                     values={this.state.polar ? polarInterpolations : cartesianInterpolations }
-                    onChange={(event) => this.setState({ interpolation: event.target.value })}
+                    onChange={( event ) => this.setState({ interpolation: event.target.value })}
                 />
                 <input
                     type="checkbox"
                     id="polar"
-                    value={this.state.polar}
+                    value={ this.state.polar }
                     onChange={
-                    (event) => this.setState({
-                        polar: event.target.checked,
-                        interpolation: "linear"
-                    })
+                        ( event ) => this.setState({
+                            polar: event.target.checked,
+                            interpolation: "linear"
+                            })
                     }
                     style={{ marginLeft: 25, marginRight: 5 }}
                 />
                 <label htmlFor="polar">polar</label>
-                <VictoryChart polar={this.state.polar} height={390}>
+                <VictoryChart polar={ this.state.polar } height={ 390 }>
                     <VictoryLine
-                        interpolation={this.state.interpolation} data={data}
+                        interpolation={ this.state.interpolation } data={ data }
                         style={{ data: { stroke: "#bb86fc" } }}
                     />
-                    <VictoryScatter data={data}
-                        size={5}
+                    <VictoryScatter data={ data }
+                        size={ 5 }
                         style={{ data: { fill: "#913bfa" } }}
                     />
                 </VictoryChart>
