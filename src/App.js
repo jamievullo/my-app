@@ -1,10 +1,12 @@
 import React from 'react'
-import { VictoryBar, VictoryChart, VictoryTheme, VictoryStack } from 'victory';
+import { VictoryBar, VictoryChart, VictoryTheme, VictoryStack, VictoryPie } from 'victory';
 
 import './App.css';
 import Chart from './Chart';
 import CircularProgressBar from './CircularProgressBar';
 import RadarChart from './RadarChart';
+import InterpolationChart from './InterpolationChart';
+import RevenueBYMonthBarChart from './RevenueByMonthBarChart';
 
 function App() {
 
@@ -53,6 +55,9 @@ function App() {
       <Chart />
       <CircularProgressBar />
       <RadarChart />
+      <InterpolationChart />
+      <RevenueBYMonthBarChart />
+      <VictoryPie />
     </div>
   );
 }
