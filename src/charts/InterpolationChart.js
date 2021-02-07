@@ -57,8 +57,8 @@ class InterpolationChart extends React.Component {
         return (
             <div>
                 <InterpolationSelect
-                    currentValue={this.state.interpolation}
-                    values={this.state.polar ? polarInterpolations : cartesianInterpolations }
+                    currentValue={ this.state.interpolation }
+                    values={ this.state.polar ? polarInterpolations : cartesianInterpolations }
                     onChange={( event ) => this.setState({ interpolation: event.target.value })}
                 />
                 <input
@@ -78,6 +78,10 @@ class InterpolationChart extends React.Component {
                     <VictoryLine
                         interpolation={ this.state.interpolation } data={ data }
                         style={{ data: { stroke: "#bb86fc" } }}
+                        animate={{
+                            duration: 2000,
+                            onLoad: { duration: 1000 }
+                        }}
                     />
                     <VictoryScatter data={ data }
                         size={ 5 }

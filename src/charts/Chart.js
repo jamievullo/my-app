@@ -29,7 +29,7 @@ class Chart extends Component {
     render() {
         return (
             <VictoryChart
-                theme={VictoryTheme.material}
+                theme={ VictoryTheme.material }
                 animate={{ duration: 1000 }}
             >
                 <VictoryStack
@@ -43,15 +43,15 @@ class Chart extends Component {
                     "#e5d1fe"
                     ]}
                 >
-                    {this.state.data.map((data, i) => {
+                    { this.state.data.map((data, i) => {
                         return (
                             <VictoryArea
-                                key={i}
-                                data={data}
-                                interpolation={"basis"}
+                                key={ i }
+                                data={ data }
+                                interpolation={ "basis"  }
                             />
                         );
-                    })}
+                    }) }
                 </VictoryStack>
             </VictoryChart>
         );

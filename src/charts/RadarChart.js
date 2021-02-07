@@ -36,56 +36,59 @@ class RadarChart extends React.Component {
     }
     
         render() {
-        return (
-            <VictoryChart polar
-            theme={VictoryTheme.material}
-            domain={{ y: [ 0, 1 ] }}
-            >
-            <VictoryGroup 
-                colorScale={[
-                    "#9f54fb",
-                    "#ad6dfb",
-                    "#bb86fc",
-                    "#c99ffd",
-                    "#d7b8fd"
-                ]}
-                style={{ data: { fillOpacity: 0.2, strokeWidth: 2 } }}
-            >
-                {this.state.data.map((data, i) => {
-                return <VictoryArea key={i} data={data}/>;
-                })}
-            </VictoryGroup>
-            {
-            Object.keys(this.state.maxima).map((key, i) => {
-                return (
-                    <VictoryPolarAxis key={i} dependentAxis
-                    style={{
-                    axisLabel: { padding: 10 },
-                    axis: { stroke: "none" },
-                    grid: { stroke: "grey", strokeWidth: 0.25, opacity: 0.5 },
-                    // fill: "white"
+            return (
+                <VictoryChart polar
+                    theme={VictoryTheme.material}
+                    domain={{ y: [ 0, 1 ] }}
+                    animate={{
+                        duration: 2000,
+                        onLoad: { duration: 1000 }
                     }}
-                            tickLabelComponent={
-                                <VictoryLabel labelPlacement="vertical"/>
-                            }
-                        labelPlacement="perpendicular"
-                        axisValue={i + 1} label={key}
-                        tickFormat={(t) => Math.ceil(t * this.state.maxima[key])}
-                        tickValues={[0.25, 0.5, 0.75]}
-                    />
-                );
-            })
-            }
-            <VictoryPolarAxis
-                labelPlacement="parallel"
-                tickFormat={() => ""}
-                style={{
-                axis: { stroke: "none" },
-                grid: { stroke: "grey", opacity: 0.5 },
-                fill: "white"
-                }}
-            />
-    
+                >
+                <VictoryGroup 
+                    colorScale={[
+                        "#9f54fb",
+                        "#ad6dfb",
+                        "#bb86fc",
+                        "#c99ffd",
+                        "#d7b8fd"
+                    ]}
+                    style={{ data: { fillOpacity: 0.2, strokeWidth: 2 } }}
+                >
+                    {this.state.data.map((data, i) => {
+                    return <VictoryArea key={i} data={data}/>;
+                    })}
+                </VictoryGroup>
+                {
+                Object.keys(this.state.maxima).map((key, i) => {
+                    return (
+                        <VictoryPolarAxis key={ i } dependentAxis
+                        style={{
+                        axisLabel: { padding: 10 },
+                        axis: { stroke: "none" },
+                        grid: { stroke: "grey", strokeWidth: 0.25, opacity: 0.5 },
+                        // fill: "white"
+                        }}
+                                tickLabelComponent={
+                                    <VictoryLabel labelPlacement="vertical"/>
+                                }
+                            labelPlacement="perpendicular"
+                            axisValue={ i + 1 } label={ key }
+                            tickFormat={(t) => Math.ceil(t * this.state.maxima[key])}
+                            tickValues={[0.25, 0.5, 0.75]}
+                        />
+                    );
+                })
+                }
+                <VictoryPolarAxis
+                    labelPlacement="parallel"
+                    tickFormat={() => ""}
+                    style={{
+                    axis: { stroke: "none" },
+                    grid: { stroke: "grey", opacity: 0.5 },
+                    fill: "white"
+                    }}
+                />    
             </VictoryChart>
         );
     }

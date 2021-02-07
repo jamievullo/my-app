@@ -13,12 +13,17 @@ class RevenueBYMonthBarChart extends React.Component {
     render() {
         return (
             <VictoryChart
-                domainPadding={{x: 18}}
+                domainPadding={{ x: 18 }}
             >
                 <VictoryBar
                     style={{
                         data: { fill: "#bb86fc" }
                     }}
+                    animate={{
+                        duration: 2000,
+                        onLoad: { duration: 1000 }
+                    }}
+                    // data on logged in user from DB plotted out using x, y
                     data={[
                         { month: "Jan", revenue: .250 },
                         { month: "Feb", revenue: .295 },
@@ -39,11 +44,11 @@ class RevenueBYMonthBarChart extends React.Component {
                 />
                 <VictoryAxis
                     label="Last 12 Months"
-                    style={this.whiteStyle}
+                    style={ this.whiteStyle }
                 />
                 <VictoryAxis dependentAxis
                     label="Total Revenue (Thousands)"
-                    style={this.whiteStyle}
+                    style={ this.whiteStyle }
                 />
             </VictoryChart>
         )

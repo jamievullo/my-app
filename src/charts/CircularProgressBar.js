@@ -4,7 +4,8 @@ import { VictoryPie, VictoryAnimation, VictoryLabel } from 'victory';
 class CircularProgressBar extends React.Component {
     
     state = {
-        percent: 25, data: this.getData(0)
+        percent: 25, 
+        data: this.getData(0)
     };
 
     componentDidMount() {
@@ -13,13 +14,13 @@ class CircularProgressBar extends React.Component {
             percent += (Math.random() * 25);
             percent = (percent > 100) ? 0 : percent;
             this.setState({
-            percent, data: this.getData(percent)
+            percent, data: this.getData( percent )
             });
         }, 2000);
     }
 
     componentWillUnmount() {
-        window.clearInterval(this.setStateInterval);
+        window.clearInterval( this.setStateInterval );
     }
 
     getData(percent) {
@@ -31,16 +32,16 @@ class CircularProgressBar extends React.Component {
         <div>
             <svg viewBox="0 0 400 400" width="100%" height="100%">
                 <VictoryPie
-                    standalone={false}
+                    standalone={ false }
                     animate={{ duration: 1000 }}
-                    width={400} height={400}
+                    width={ 400 } height={ 400 }
                     data={this.state.data}
-                    innerRadius={120}
-                    cornerRadius={25}
+                    innerRadius={ 120 }
+                    cornerRadius={ 25 }
                     labels={() => null}
                     style={{
                         data: { fill: ({ datum }) => {
-                            const color = datum.y < 85 ? "#bb86fc" : "red";
+                            const color = datum.y < 88 ? "#bb86fc" : "red";
                             return datum.x === 1 ? color : "transparent";
                             }
                         }
@@ -52,7 +53,7 @@ class CircularProgressBar extends React.Component {
                                 <VictoryLabel
                                     textAnchor="middle" 
                                     verticalAnchor="middle"
-                                    x={200} y={200}
+                                    x={ 200 } y={ 200 }
                                     text={`${Math.round(newProps.percent)}%`}
                                     style={{ fontSize: 45, fill: "white" }}
                                 />
