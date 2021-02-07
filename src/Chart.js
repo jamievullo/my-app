@@ -4,13 +4,10 @@ import _ from 'lodash';
 import chunk from 'lodash/chunk';
 
 class Chart extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { 
-            data: this.getData() 
-        };
-    }
-    
+    state = { 
+        data: this.getData() 
+    };
+
     componentDidMount() {
         this.setStateInterval = window.setInterval(() => {
                 this.setState({ data: this.getData() });
@@ -61,4 +58,4 @@ class Chart extends Component {
     }
 }
 
-export default Chart
+export default Chart;

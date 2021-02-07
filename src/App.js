@@ -3,6 +3,8 @@ import { VictoryBar, VictoryChart, VictoryTheme, VictoryStack } from 'victory';
 
 import './App.css';
 import Chart from './Chart';
+import CircularProgressBar from './CircularProgressBar';
+import RadarChart from './RadarChart';
 
 function App() {
 
@@ -47,45 +49,10 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor: "#2b2d2f"}}>
       <Chart />
-      {/* <VictoryChart
-        domainPadding={20}
-        theme={VictoryTheme.material}
-      >
-        <VictoryAxis
-          tickValues={[1, 2, 3, 4]}
-          tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"]}
-        />
-        <VictoryAxis
-          dependentAxis
-          tickFormat={(x) => (`$${x / 1000}k`)}
-        />
-        <VictoryStack
-          colorScale={"warm"}
-        >
-          <VictoryBar
-            data={data2017}
-            x="quarter"
-            y="earnings"
-          />
-          <VictoryBar
-            data={data2018}
-            x="quarter"
-            y="earnings"
-          />
-          <VictoryBar
-            data={data2019}
-            x="quarter"
-            y="earnings"
-          />
-          <VictoryBar
-            data={data2020}
-            x="quarter"
-            y="earnings"
-          />
-        </VictoryStack>
-      </VictoryChart> */}
+      <CircularProgressBar />
+      <RadarChart />
     </div>
   );
 }
