@@ -6,13 +6,15 @@ import chunk from 'lodash/chunk';
 class Chart extends Component {
     constructor(props) {
         super(props);
-        this.state = { data: this.getData() };
+        this.state = { 
+            data: this.getData() 
+        };
     }
     
     componentDidMount() {
         this.setStateInterval = window.setInterval(() => {
                 this.setState({ data: this.getData() });
-            }, 4000);
+            }, 3000);
         }
     
     getData() {
@@ -22,7 +24,7 @@ class Chart extends Component {
             { x: 2, y: _.random(1, 10) },
             { x: 3, y: _.random(2, 10) },
             { x: 4, y: _.random(2, 10) },
-            { x: 5, y: _.random(2, 15) }
+            { x: 5, y: _.random(2, 12) }
             ];
         });
     }
