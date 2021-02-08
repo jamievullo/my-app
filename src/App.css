@@ -1,8 +1,21 @@
 .App {
+  background-color: #2b2d2f;
   text-align: center;
-  max-width: 25%;
+  max-width: 100%;
 }
 
+tspan {
+  fill: #ffffff !important;
+}
+
+line {
+  stroke: #ffffff !important;
+}
+
+path {
+  stroke: #ffffff !important;
+  /* stroke-width: 1.5 !important; */
+}
 
 /* 
 .App-logo {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { VictoryArea, VictoryChart, VictoryTheme, VictoryStack } from 'victory';
 import _ from 'lodash';
-import chunk from 'lodash/chunk';
 
 class Chart extends Component {
     state = { 

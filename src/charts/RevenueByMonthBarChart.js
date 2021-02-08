@@ -23,7 +23,7 @@ class RevenueBYMonthBarChart extends React.Component {
                         duration: 2000,
                         onLoad: { duration: 1000 }
                     }}
-                    // data on logged in user from DB plotted out using x, y
+                    // NOTE: data on logged in user from DB plotted out using x, y
                     data={[
                         { month: "Jan", revenue: .250 },
                         { month: "Feb", revenue: .295 },
@@ -39,11 +39,12 @@ class RevenueBYMonthBarChart extends React.Component {
                         { month: "Dec", revenue: 1.287 }
                     ]}
                     x="month"
-                    // y={(d) => (d.actual / d.expected) * 100}
                     y={"revenue"}
+                    // y={(d) => (d.actual / d.expected) * 100}
+                    // NOTE: you can pass functions directly in to y like above
                 />
                 <VictoryAxis
-                    label="Last 12 Months"
+                    label="By Month (Last 12 Months)"
                     style={ this.whiteStyle }
                 />
                 <VictoryAxis dependentAxis

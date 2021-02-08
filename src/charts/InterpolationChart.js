@@ -46,12 +46,12 @@ class InterpolationChart extends React.Component {
         polar: false
     };
 
-    whiteStyle = {
-        axis: { stroke: "white" },
-        axisLabel: { fontSize: 15, padding: 30, fill: "white" },
-        ticks: { stroke: "#bb86fc", size: 5, },
-        tickLabels: { fontSize: 13, padding: 5, fill: "white" }
-    }
+    // whiteStyle = {
+    //     axis: { stroke: "white" },
+    //     axisLabel: { fontSize: 15, padding: 30, fill: "white" },
+    //     ticks: { stroke: "#bb86fc", size: 5, },
+    //     tickLabels: { fontSize: 13, padding: 5, fill: "white" }
+    // };
 
     render() {
         return (
@@ -73,8 +73,17 @@ class InterpolationChart extends React.Component {
                     }
                     style={{ marginLeft: 25, marginRight: 5 }}
                 />
-                <label htmlFor="polar">polar</label>
-                <VictoryChart polar={ this.state.polar } height={ 390 }>
+                    <label 
+                        htmlFor="polar"
+                        style={{ data: { fill: "#ffffff" } }}
+                    >
+                        polar
+                    </label>
+                <VictoryChart 
+                    polar={ this.state.polar } 
+                    height={ 390 }
+                    style={{ data: { fill: "#ffffff" } }} 
+                    >
                     <VictoryLine
                         interpolation={ this.state.interpolation } data={ data }
                         style={{ data: { stroke: "#bb86fc" } }}
@@ -85,7 +94,7 @@ class InterpolationChart extends React.Component {
                     />
                     <VictoryScatter data={ data }
                         size={ 5 }
-                        style={{ data: { fill: "#913bfa" } }}
+                        style={{ data: { fill: "#bb86fc" } }}
                     />
                 </VictoryChart>
             </div>

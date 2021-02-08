@@ -7,6 +7,8 @@ const characterData = [
     { photos: 5, videos: 225, camming: 3, TDTM: 60, overall: 120 }
 ];
 
+//NOTE: we need to differentiate colors here and stagger animmations
+
 class RadarChart extends React.Component {
     
     state = {
@@ -42,7 +44,7 @@ class RadarChart extends React.Component {
                     domain={{ y: [ 0, 1 ] }}
                     animate={{
                         duration: 2000,
-                        onLoad: { duration: 1000 }
+                        onLoad: { duration: 500 }
                     }}
                 >
                 <VictoryGroup 
@@ -55,12 +57,12 @@ class RadarChart extends React.Component {
                     ]}
                     style={{ data: { fillOpacity: 0.2, strokeWidth: 2 } }}
                 >
-                    {this.state.data.map((data, i) => {
-                    return <VictoryArea key={i} data={data}/>;
+                    {this.state.data.map(( data, i ) => {
+                    return <VictoryArea key={ i } data={ data }/>;
                     })}
                 </VictoryGroup>
                 {
-                Object.keys(this.state.maxima).map((key, i) => {
+                Object.keys(this.state.maxima).map(( key, i ) => {
                     return (
                         <VictoryPolarAxis key={ i } dependentAxis
                         style={{
