@@ -89,7 +89,7 @@ class InterpolationChart extends React.Component {
                         style={{ data: { stroke: "#bb86fc" } }}
                         animate={{
                             duration: 2000,
-                            onLoad: { duration: 1000 }
+                            onLoad: { duration: 2000 }
                         }}
                     />
                     <VictoryScatter data={ data }

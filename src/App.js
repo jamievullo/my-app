@@ -1,11 +1,12 @@
 import React from 'react'
 import './App.css';
-import Chart from './charts/Chart';
+
 import CircularProgressBar from './charts/CircularProgressBar';
 import RadarChart from './charts/RadarChart';
 import InterpolationChart from './charts/InterpolationChart';
 import RevenueBYMonthBarChart from './charts/RevenueByMonthBarChart';
-import VictoryPieChart from './charts/VictoryPieChart';
+import RevenuePercentageByCategory from './charts/RevenuePercentageByCategory';
+import Chart from './charts/Chart';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
       <RadarChart />
       <InterpolationChart />
       <RevenueBYMonthBarChart />
-      <VictoryPieChart />
+      <RevenuePercentageByCategory />
       <Chart />
     </div>
   );
@@ -26,7 +27,7 @@ export default App;
 
 
 
- // Random colorscale and data set on top of app for now
+ // Good colorscale and data set on top of app for now
   // colorScale=[
   //   "#913bfa",
   //   "#9f54fb",

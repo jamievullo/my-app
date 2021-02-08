@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { VictoryArea, VictoryChart, VictoryTheme, VictoryStack } from 'victory';
+import { VictoryArea, VictoryChart, VictoryTheme, VictoryStack, VictoryAxis } from 'victory';
 import _ from 'lodash';
 
 class Chart extends Component {
@@ -29,17 +29,16 @@ class Chart extends Component {
         return (
             <VictoryChart
                 theme={ VictoryTheme.material }
-                animate={{ duration: 1000 }}
+                animate={{ duration: 1500 }}
             >
                 <VictoryStack
                     colorScale={[
-                    "#913bfa",
-                    "#9f54fb",
-                    "#ad6dfb",
-                    "#bb86fc",
-                    "#c99ffd",
-                    "#d7b8fd",
-                    "#e5d1fe"
+                        "#bb86fc",
+                        "#fc86b1",
+                        "#fcb986",
+                        "#fce886",
+                        "#86fc8a",
+                        "#86e0fc"
                     ]}
                 >
                     { this.state.data.map((data, i) => {
@@ -52,6 +51,19 @@ class Chart extends Component {
                         );
                     }) }
                 </VictoryStack>
+                <VictoryAxis
+                    label="Total Likes"
+                    style={{
+                        axisLabel: { fontSize: 15, padding: 30, fill: "white" }
+                    }}
+                />
+                <VictoryAxis dependentAxis
+                    label="Total Posts"
+                    style={{        
+                        ticks: { stroke: "white", size: 5, },
+                        tickLabels: { fontSize: 15, padding: -40, fill: "white" }
+                    }}
+                />
             </VictoryChart>
         );
     }

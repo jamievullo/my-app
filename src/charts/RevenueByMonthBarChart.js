@@ -13,7 +13,7 @@ class RevenueBYMonthBarChart extends React.Component {
     render() {
         return (
             <VictoryChart
-                domainPadding={{ x: 18 }}
+                domainPadding={{ x: 15 }}
             >
                 <VictoryBar
                     style={{
