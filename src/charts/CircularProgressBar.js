@@ -41,7 +41,7 @@ class CircularProgressBar extends React.Component {
                     labels={() => null}
                     style={{
                         data: { fill: ({ datum }) => {
-                            const color = datum.y < 88 ? "#bb86fc" : "red";
+                            const color = datum.y < 88 ? "#bb86fc" : "#fc868e";
                             return datum.x === 1 ? color : "transparent";
                             }
                         }

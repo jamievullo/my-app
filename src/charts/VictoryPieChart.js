@@ -1,5 +1,5 @@
 import React from 'react'
-import { VictoryPie, VictoryLabel } from 'victory';
+import { VictoryPie, VictoryLabel, VictoryStack } from 'victory';
 
 class VictoryPieChart extends React.Component {
 
@@ -21,18 +21,27 @@ class VictoryPieChart extends React.Component {
     render() {
         return (
             <svg viewBox="0 0 400 400">
-                <VictoryPie
-                    standalone={ false }
-                    width={ 400 } height={ 400 }
-                    data={ [
-                        { x: "Camming", y: 120 }, 
-                        { x: "Items", y: 150 }, 
-                        { x: "Subs", y: 70 },
-                        { x: "TDTM", y: 20 }
-                    ] }
-                    innerRadius={ 100 } labelRadius={ 65 }
-                    style={{ labels: { fontSize: 15, fill: "white" }}}
-                />
+                
+                    <VictoryPie
+                        colorScale={[
+                            "#bb86fc",
+                            "#fc86b1",
+                            "#fce886",
+                            "#86fc8a",
+                            "#86e0fc"
+                        ]}
+                        standalone={ false }
+                        width={ 400 } height={ 400 }
+                        data={ [
+                            { x: "Subs", y: 40 },
+                            { x: "Tips", y: 150},
+                            { x: "TDTM", y: 20 },
+                            { x: "Items", y: 20 }, 
+                            { x: "Cam", y: 120 } 
+                        ] }
+                        innerRadius={ 110 } labelRadius={ 80 }
+                        style={{ labels: { fontSize: 10, fill: "white" }}}
+                    />
                 <VictoryLabel
                     textAnchor="middle"
                     style={{ fontSize: 20, fill: "white" }}
