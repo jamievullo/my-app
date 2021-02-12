@@ -16,11 +16,11 @@ class Chart extends Component {
     getData() {
         return _.range(7).map(() => {
             return [
-            { x: 1, y: _.random(1, 5) },
-            { x: 2, y: _.random(1, 10) },
-            { x: 3, y: _.random(2, 10) },
-            { x: 4, y: _.random(2, 10) },
-            { x: 5, y: _.random(2, 12) }
+            { x: 10, y: _.random(1, 8) },
+            { x: 20, y: _.random(1, 10) },
+            { x: 30, y: _.random(2, 14) },
+            { x: 40, y: _.random(2, 19) },
+            { x: 50, y: _.random(2, 25) }
             ];
         });
     }

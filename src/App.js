@@ -7,17 +7,19 @@ import InterpolationChart from './charts/InterpolationChart';
 import RevenueBYMonthBarChart from './charts/RevenueByMonthBarChart';
 import RevenuePercentageByCategory from './charts/RevenuePercentageByCategory';
 import Chart from './charts/Chart';
+import Modal1 from './modals/Modal1';
 
 function App() {
 
   return (
     <div className="App">
-      <CircularProgressBar />
+      {/* <CircularProgressBar />
       <RadarChart />
       <InterpolationChart />
-      <RevenueBYMonthBarChart />
       <RevenuePercentageByCategory />
-      <Chart />
+      <RevenueBYMonthBarChart />
+      <Chart /> */}
+      <Modal1 />
     </div>
   );
 }
