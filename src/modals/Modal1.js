@@ -39,7 +39,7 @@ class Modal1 extends React.Component {
         return (
             <div className="modal-container">
                 <ButtonToolbar>
-                    <Button onClick={this.open}>Open</Button>
+                    <Button onClick={this.open}>Start Now</Button>
                 </ButtonToolbar>
         
                 <Modal show={show} onHide={this.close} onExited={this.resetRows}>

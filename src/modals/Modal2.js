@@ -9,23 +9,25 @@ import Modal3 from './Modal3';
 
 class Modal2 extends React.Component {
     constructor(props) {
-        super(props);
-        this.state = {
-            show: false,
-            overflow: false,
-            rows: 0
-        };
+    super(props);
+    this.state = {
+        show: false,
+        overflow: false,
+        rows: 0
+    };
         this.close = this.close.bind(this);
         this.open = this.open.bind(this);
         this.resetRows = this.resetRows.bind(this);
-        }
-        close() {
+    }
+    close() {
         this.setState({ show: false });
-        }
-        resetRows() {
+    }
+
+    resetRows() {
         this.setState({ rows: 0 });
-        }
-        open(event) {
+    }
+
+    open(event) {
         this.setState({ show: true });
         setTimeout(() => {
             this.setState({
@@ -33,14 +35,14 @@ class Modal2 extends React.Component {
             rows: 20
             });
         }, 3500);
-        }
-        render() {
+    }
+    render() {
         const { overflow, show } = this.state;
         return (
             <div className="modal-container">
-            <ButtonToolbar>
-                <Button onClick={this.open}>Open</Button>
-            </ButtonToolbar>
+                <ButtonToolbar>
+                    <Button onClick={this.open}>Upload Images</Button>
+                </ButtonToolbar>
     
             <Modal show={show} onHide={this.close} onExited={this.resetRows}>
                 <Modal.Header>
@@ -67,7 +69,7 @@ class Modal2 extends React.Component {
             </Modal>
             </div>
         );
-        }
+    }
 }
 
 export default Modal2;
