@@ -1,13 +1,15 @@
 import React from 'react'
 import './App.css';
 
-import CircularProgressBar from './charts/CircularProgressBar';
-import RadarChart from './charts/RadarChart';
-import InterpolationChart from './charts/InterpolationChart';
-import RevenueBYMonthBarChart from './charts/RevenueByMonthBarChart';
-import RevenuePercentageByCategory from './charts/RevenuePercentageByCategory';
-import Chart from './charts/Chart';
+// import CircularProgressBar from './charts/CircularProgressBar';
+// import RadarChart from './charts/RadarChart';
+// import InterpolationChart from './charts/InterpolationChart';
+// import RevenueBYMonthBarChart from './charts/RevenueByMonthBarChart';
+// import RevenuePercentageByCategory from './charts/RevenuePercentageByCategory';
+// import Chart from './charts/Chart';
 import Modal1 from './modals/Modal1';
+import 'rsuite/dist/styles/rsuite-default.css';
+
 
 function App() {
 
