@@ -9,7 +9,7 @@ import Modal2 from './Modal2';
 
 class Modal1 extends React.Component {
     constructor(props) {
-        super(props);
+    super(props);
         this.state = {
             show: false,
             overflow: false,
@@ -18,14 +18,17 @@ class Modal1 extends React.Component {
         this.close = this.close.bind(this);
         this.open = this.open.bind(this);
         this.resetRows = this.resetRows.bind(this);
-        }
-        close() {
+    }
+
+    close() {
         this.setState({ show: false });
-        }
-        resetRows() {
+    }
+
+    resetRows() {
         this.setState({ rows: 0 });
-        }
-        open(event) {
+    }
+
+    open(event) {
         this.setState({ show: true });
         setTimeout(() => {
             this.setState({
@@ -33,8 +36,9 @@ class Modal1 extends React.Component {
             rows: 20
             });
         }, 3500);
-        }
-        render() {
+    }
+
+    render() {
         const { overflow, show } = this.state;
         return (
             <div className="modal-container">
@@ -49,8 +53,8 @@ class Modal1 extends React.Component {
                     <Modal.Body>
                         {this.state.rows ? (
                             <Placeholder.Paragraph rows={this.state.rows} />
-                        ) : (
-                            <div style={{ textAlign: 'center' }}>
+                            ) : (
+                                <div style={{ textAlign: 'center' }}>
                             <Loader size="md" />
                             </div>
                         )}
@@ -67,7 +71,7 @@ class Modal1 extends React.Component {
                 </Modal>
             </div>
         );
-        }
+    }
 }
 
 export default Modal1;

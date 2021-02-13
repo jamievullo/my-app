@@ -19,6 +19,7 @@ class Modal2 extends React.Component {
         this.open = this.open.bind(this);
         this.resetRows = this.resetRows.bind(this);
     }
+
     close() {
         this.setState({ show: false });
     }
@@ -36,6 +37,7 @@ class Modal2 extends React.Component {
             });
         }, 3500);
     }
+
     render() {
         const { overflow, show } = this.state;
         return (
@@ -46,7 +48,7 @@ class Modal2 extends React.Component {
     
             <Modal show={show} onHide={this.close} onExited={this.resetRows}>
                 <Modal.Header>
-                <Modal.Title>We Can't Wait to Make You Deleriously Happy!!</Modal.Title>
+                    <Modal.Title>We Can't Wait to Make You Deleriously Happy!!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                 {this.state.rows ? (
