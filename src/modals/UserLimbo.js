@@ -6,6 +6,7 @@ import example2 from '../images/PassportSampleImage.png';
 export default function UserLimbo() {
 
     const [ file, setFile ] = useState(false);
+    const [ acceptImage, setAcceptImage ] = useState(false)
 
     const handleImageUpload = e => {
         const upload = e.target.files[0]    
@@ -20,7 +21,7 @@ export default function UserLimbo() {
     return (
         <Container style={{ marginTop: "2em", width: "100%" }}>
             <h5 style={{ marginBottom: "2em" }} >Identity Verification</h5>
-                <p style={{textAlign: "left"}}>Upload an image of your government issued ID or current passport. Please ensure that all information is visible and easy to read. See samples below:</p>
+                <div style={{textAlign: "left"}}>Upload an image of your government issued ID or current passport. Please ensure that all information is visible and easy to read. See samples below:</div>
             <Form>
                 { file && (
                     <Container id="upload-preview">
@@ -37,9 +38,24 @@ export default function UserLimbo() {
                         onChange={e => handleImageUpload(e)}
                         />
                 </Form.Group>
+                <div style={{display: "flex", justifyContent: "space-between", marginBottom: "2em"}}>
+                    <Button 
+                        variant="secondary" 
+                        onClick={() => acceptImage(false)}
+                        variant='light'
+                    >
+                        pick a new image
+                    </Button>
+                    <Button 
+                        variant="light"
+                        onClick={() => acceptImage(true)}
+                    >
+                        submit            
+                    </Button>
+                </div>
             </Form>
-            <img src={example1} style={{ width: "50%"}} />
-            <img src={example2} style={{ width: "50%"}} />
+            <img src={example1} style={{ width: "50%" }} className="rounded border-2"/>
+            <img src={example2} style={{ width: "50%" }} className="rounded border-2"/>
         </Container>            
     )
 }
