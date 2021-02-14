@@ -9,6 +9,7 @@ import './App.css';
 // import Chart from './charts/Chart';
 import Modal1 from './modals/Modal1';
 import 'rsuite/dist/styles/rsuite-default.css';
+import UserLimbo from './modals/UserLimbo';
 
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
       <RevenuePercentageByCategory />
       <RevenueBYMonthBarChart />
       <Chart /> */}
-      <Modal1 />
+      {/* <Modal1 /> */}
+      <UserLimbo />
     </div>
   );
 }
