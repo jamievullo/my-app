@@ -8,7 +8,8 @@ export default function UserLimbo(props) {
 
     const [ file, setFile ] = useState(false);
     const [ acceptImage, setAcceptImage ] = useState(false)
-    
+
+    // NOTE: component takes in props for checkpoint
     const checkpoint = props.checkpoint
 
     const data = {
@@ -18,7 +19,7 @@ export default function UserLimbo(props) {
         },
         usersIdentification: {
             sampleImages: [example3],
-            directions: "Upload an image of you holding your government ID/current passport next to your face. Your face and all information on ID must be visible and easy to read. Any unclear images or obstructions to your face for identification will result in delays in your progress. See sample below:",
+            directions: "Upload an image of you holding your government ID/current passport next to your face. Your face and all information on ID must be visible and easy to read. Any unclear images or obstructions to your face for identification will result in delays in your verification progress. See sample below:",
         }
     }
 
@@ -35,7 +36,11 @@ export default function UserLimbo(props) {
     return (
         <Container style={{ marginTop: "2em", width: "100%" }}>
             <h5 style={{ marginBottom: "2em" }} >Identity Verification</h5>
-                <div style={{textAlign: "left"}}>Upload an image of your government issued ID or current passport. Please ensure that all information is visible and easy to read. See samples below:</div>
+                {/* NOTE: need to determine checkpoint value and way to incriment and render based of checkpoint value */}
+                
+                    {/* // <img src={data.identification.sampleImages[i]} key={i} style={{ width: "50%" }} className="rounded border border-dark"/> */}
+                    <div style={{textAlign: "left"}}>{data[checkpoint].directions}</div>
+                
             <Form>
                 { file && (
                     <Container id="upload-preview">
@@ -52,24 +57,40 @@ export default function UserLimbo(props) {
                         onChange={e => handleImageUpload(e)}
                         />
                 </Form.Group>
-                <div style={{display: "flex", justifyContent: "space-between", marginBottom: "2em"}}>
-                    <Button 
-                        variant="secondary" 
-                        onClick={() => acceptImage(false)}
-                        variant='light'
-                    >
-                        pick a new image
-                    </Button>
+                <div style={{marginBottom: "2em"}}>
                     <Button 
                         variant="light"
-                        onClick={() => acceptImage(true)}
+                        onClick={() => setAcceptImage(true)}
                     >
                         submit            
                     </Button>
                 </div>
             </Form>
-            <img src={example1} style={{ width: "50%" }} className="rounded border border-dark"/>
-            <img src={example2} style={{ width: "50%" }} className="rounded border border-dark"/>
+            {/* NOTE: need to determine checkpoint value and way to incriment and render based of checkpoint value */}
+            {data[checkpoint].sampleImages.map((imageKeyName, i) => (
+                <img src={imageKeyName} key={i} style={{ width: "50%" }} className="rounded border border-dark"/>
+            ))}
         </Container>            
     )
 }
+
+// NOTE: Timeline...
+// const instance = (
+//     <Timeline style={{display: 'flex', justifyContent: 'space-evenly'}}>
+//       <Timeline.Item dot={<Icon icon="check-circle" style={{ color: 'green' }} />}>
+//         <p>Great start</p>     
+//       </Timeline.Item>
+//       <Timeline.Item dot={<Icon icon="exclamation-triangle" style={{ color: 'orange' }} />}>
+//         <p>ToS</p>      
+//       </Timeline.Item>
+//       <Timeline.Item dot={<Icon icon="exclamation-triangle" style={{ color: 'orange' }} />}>
+//         <p>ID Upload</p>
+//       </Timeline.Item>
+//       <Timeline.Item dot={<Icon icon="exclamation-triangle" style={{ color: 'orange' }} />}>
+//         <p>Identity Verification</p>
+//       </Timeline.Item>
+//       <Timeline.Item dot={<Icon icon="spinner" spin style={{ borderRadius:'50%' }} />}>
+//         <p>Welcome</p>
+//       </Timeline.Item>
+//     </Timeline>
+//   );
