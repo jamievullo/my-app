@@ -1,2 +1,3 @@
-// NOTE: Instructional component with checkbox for not showing directions again
+// NOTE: Application Instructional overlay component with 
+// NOTE: checkbox for not showing directions again.
 

@@ -73,24 +73,3 @@ export default function UserLimbo(props) {
         </Container>            
     )
 }
-
-// NOTE: Timeline...
-// const instance = (
-//     <Timeline style={{display: 'flex', justifyContent: 'space-evenly'}}>
-//       <Timeline.Item dot={<Icon icon="check-circle" style={{ color: 'green' }} />}>
-//         <p>Great start</p>     
-//       </Timeline.Item>
-//       <Timeline.Item dot={<Icon icon="exclamation-triangle" style={{ color: 'orange' }} />}>
-//         <p>ToS</p>      
-//       </Timeline.Item>
-//       <Timeline.Item dot={<Icon icon="exclamation-triangle" style={{ color: 'orange' }} />}>
-//         <p>ID Upload</p>
-//       </Timeline.Item>
-//       <Timeline.Item dot={<Icon icon="exclamation-triangle" style={{ color: 'orange' }} />}>
-//         <p>Identity Verification</p>
-//       </Timeline.Item>
-//       <Timeline.Item dot={<Icon icon="spinner" spin style={{ borderRadius:'50%' }} />}>
-//         <p>Welcome</p>
-//       </Timeline.Item>
-//     </Timeline>
-//   );
