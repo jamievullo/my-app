@@ -1,5 +1,8 @@
 import React from 'react';
 import { Steps, Button, ButtonGroup } from 'rsuite';
+// import { Modal } from 'bootstrap';
+import Modal1 from './Modal1';
+import UserLimbo from './UserLimbo';
 
 export default class VerificationProgressBar extends React.Component {
     constructor() {
@@ -30,23 +33,29 @@ export default class VerificationProgressBar extends React.Component {
     render() {
         const { step } = this.state;
         return (
-            <div style={{marginTop: '2em'}}>
-                <Steps current={step} small >
-                    <Steps.Item title="Finished" description="Step 1" />
-                    <Steps.Item title="Ongoing" description="Step 2" />
-                    <Steps.Item title="Waiting" description="Step 3" />
-                    <Steps.Item title="Waiting" description="Step 4" />
-                </Steps>
-                <hr />
-                <ButtonGroup>
-                    <Button onClick={this.decline} disabled={step === 0}>
-                    Previous
-                    </Button>
-                    <Button onClick={this.increase} disabled={step === 3}>
-                    Next
-                    </Button>
-                </ButtonGroup>
-            </div>
+            <>
+                <div id="stepsContainer" >
+                    <Steps current={step} small style={{position: "fixed", top: "0", width: "100%", backgroundColor: "var(--background-charcoal)"}}>
+                        <Steps.Item title="" description="" />
+                        <Steps.Item title="" description="" />
+                        <Steps.Item title="" description="" />
+                        <Steps.Item title="" description="" />  
+                    </Steps>
+                </div>
+                <div>
+                    <ButtonGroup style={{marginTop: "4em"}}>
+                        <Button onClick={this.decline} disabled={step === 0}>
+                        Back
+                        </Button>
+                        <Button onClick={this.increase} disabled={step === 3}>
+                        Next
+                        </Button>
+                    </ButtonGroup>
+                    {/* <Modal1 /> */}
+                    {/* <UserLimbo checkpoint="identification" /> */}
+                    <UserLimbo checkpoint="usersIdentification" />
+                </div>
+            </>
         );
     }
 }

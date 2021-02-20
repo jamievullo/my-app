@@ -1406,3 +1406,33 @@ path {
   stroke: #ffffff !important;
   /* stroke-width: 1.5 !important; */
 }
+
+/* //MARK: User verification stuffs */
+
+#steps-container {
+  padding: 3%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  /* background-color: var(--background-charcoal); */
+  width: 100%;
+}
+
+.rs-steps-item-status-process .rs-steps-item-icon-wrapper:not(.rs-steps-item-custom-icon) {
+  border-color: #bb86fc !important;
+  background: #bb86fc !important;
+  color: #fff;
+}
+
+.rs-steps-item-status-finish .rs-steps-item-icon-wrapper:not(.rs-steps-item-custom-icon) {
+  border-color: #bb86fc !important;
+  color: #fff;
+}
+
+.rs-steps-item-status-finish .rs-steps-item-icon-wrapper:not(.rs-steps-item-custom-icon) .rs-steps-item-icon::before {
+  content: '\f00c';
+  color: #bb86fc !important;
+}
+
+.rs-steps-item-status-finish .rs-steps-item-tail, .rs-steps-item-status-finish .rs-steps-item-title::after {
+  border-color: #bb86fc !important;
+}
