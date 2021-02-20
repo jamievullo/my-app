@@ -42,8 +42,8 @@ export default function UserLimbo(props) {
 
     return (
         <Container style={{ marginTop: "4em", width: "100%" }}>
-            <h5 style={{ marginBottom: "2em"}} >Identity Verification</h5>            
-                <div style={{textAlign: "left"}}>{data[checkpoint].instructions}</div>
+            <h5 style={{ marginBottom: "2em", color: "white"}} >Identity Verification</h5>            
+                <div style={{textAlign: "left", color: "white"}}>{data[checkpoint].instructions}</div>
 
             <Form>
                 { file && (
@@ -64,7 +64,7 @@ export default function UserLimbo(props) {
                 <div style={{marginBottom: "2em"}}>
                     <Button 
                         variant="light"
-                        onClick={() => setAcceptImage(true)}
+                        onClick={() => props.increase()}
                     >
                         submit            
                     </Button>
