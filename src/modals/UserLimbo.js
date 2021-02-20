@@ -66,7 +66,7 @@ export default function UserLimbo(props) {
                     </Button>
                 </div>
             </Form>
-            {/* NOTE: need to determine checkpoint value and way to incriment and render based of checkpoint value */}
+            {/* NOTE: need to determine step value and way to incriment and render based of step value */}
             {data[checkpoint].sampleImages.map((imageKeyName, i) => (
                 <img src={imageKeyName} key={i} style={{ width: "50%" }} className="rounded border border-dark"/>
             ))}

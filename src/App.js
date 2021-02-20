@@ -10,21 +10,23 @@ import Chart from './charts/Chart';
 import Modal1 from './modals/Modal1';
 import 'rsuite/dist/styles/rsuite-default.css';
 import UserLimbo from './modals/UserLimbo';
+import VerificationProgressBar from './modals/VerificationProgressBar';
 
 
 function App() {
 
   return (
     <div className="App">
-      {/* <CircularProgressBar />
-      <RadarChart />
-      <InterpolationChart />
-      <RevenuePercentageByCategory />
-      <RevenueBYMonthBarChart />
-      <Chart /> */}
-      <Modal1 />
+      {/* <CircularProgressBar /> */}
+      {/* <RadarChart /> */}
+      {/* <InterpolationChart /> */}
+      {/* <RevenuePercentageByCategory /> */}
+      {/* <RevenueBYMonthBarChart /> */}
+      {/* <Chart /> */}
+      {/* <Modal1 />
       <UserLimbo checkpoint="identification" />
-      <UserLimbo checkpoint="usersIdentification" />
+      <UserLimbo checkpoint="usersIdentification" /> */}
+      <VerificationProgressBar />
     </div>
   );
 }
