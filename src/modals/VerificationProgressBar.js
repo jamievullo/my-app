@@ -14,9 +14,9 @@ export default function VerificationProgressBar() {
         setStep(step)
     }
 
-    const decline = () => {
-        changePercent(step - 1);
-    }
+    // const decline = () => {
+    //     changePercent(step - 1);
+    // }
 
     const increase = () => {
         changePercent(step + 1);
